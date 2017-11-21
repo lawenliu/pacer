@@ -1,3 +1,14 @@
-<p>
-  list-clients works!
-</p>
+
+<div id="details-container">
+	<h3> Clients List</h3>
+	<div class="customer-details">
+		<tr><th>Name</th><th>Email</th><th>Hourly Rate</th><th>Visit Frequency</th><th>Activity</th></tr>
+		<tr *ngFor="let client of clients">
+		  <td class=""> {{client.firstName }} {{client.lastName }}</td>
+		  <td>{{client.email }}</td>
+		  <td>{{client.hourlyRateCharged }}</td>
+		  <td>{{client.weeklyVisitFrequency }}</td>
+		  <td><button (click)="activityClicked(client)"> {{ client.activity}} </button></td>
+		</tr>
+	</div>
+</div>

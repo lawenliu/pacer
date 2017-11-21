@@ -20,10 +20,20 @@ import * as firebase from 'firebase/app';
   // host: {'[@moveIn]': ''}
 })
 export class LoginComponent implements OnInit {
+  firstButtonTitle: string;
+  secondButtonTitle: string;
+  message: string;
 
   constructor(public afAuth: AngularFireAuth, private router: Router) { }
 
   ngOnInit() {
+    this.firstButtonTitle = "Login";
+    this.secondButtonTitle = "Login Google";
+    this.message = "";
+  }
+
+  onLogin(email: string, password: string): void {
+    this.message = "Error: User name or passowrd is not correct!";
   }
 
   loginGoogle() {

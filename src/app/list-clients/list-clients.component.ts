@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input,
+ Output, EventEmitter  } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-list-clients',
@@ -6,12 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-clients.component.css']
 })
 export class ListClientsComponent implements OnInit {
-  clientsList;
+  @Input() clients: Observable<any[]>;
+	@Output() activity: EventEmitter<any> = new EventEmitter();
   constructor() {
     
   }
   ngOnInit() {
     
+  }
+
+  activityClicked(client) {
+    this.activity.emit(client);
   }
 
 }
