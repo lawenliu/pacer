@@ -31,7 +31,7 @@ const routes: Routes = [
   // basic routes
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'profile', component: HomeComponent },
+  { path: 'clients', component: ListClientsComponent },
   { path: 'login', component: LoginComponent },
   { path: '**', redirectTo: 'home' },
 ];
